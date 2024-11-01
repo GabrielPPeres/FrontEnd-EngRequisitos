@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Cabeçalho -->
+    <header class="header">
+        <div class="header-content">
+            <div class="logo">
+                <img src="sua-logo.png" alt="Logo da Empresa">
+            </div>
+            <h1>Nome da Empresa</h1>
+            <nav>
+                <a href="#">Home</a>
+                <a href="#">Sobre</a>
+                <a href="#">Contato</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Contêiner de Conteúdo Principal -->
+    <main class="main-content">
+        <div class="login-container">
+            <h2>Faça seu login</h2>
+            <form id="loginForm" action="#">
+                <input type="text" id="username" placeholder="Usuário" required>
+                <input type="password" id="password" placeholder="Senha" required>
+                <button type="submit">Entrar</button>
+                <p id="error-message"></p>
+            </form>
+            <p class="forgot-password"><a href="recuperarsenha.html">Esqueceu a senha?</a></p>
+        </div>
+    </main>
+
+    <!-- Rodapé -->
+    <footer class="footer">
+        <p>&copy; 2024 Nome da Empresa. Todos os direitos reservados.</p>
+        <a href="#">Termos de Uso</a> | <a href="#">Política de Privacidade</a>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
