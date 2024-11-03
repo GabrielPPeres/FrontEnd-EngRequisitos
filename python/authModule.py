@@ -15,7 +15,7 @@ class Auth:
 
     def register_user(self, name, email, password):
         #registra um novo user no banco de dados
-        hashed_password = self.simple_hash(password)  # Usar a função simple_hash para criptografar a senha
+        hashed_password = self.simple_hash(password)  # Usar a função simple_hash para criptografar
         user_id = self.db.create_user(name, email, hashed_password)
         
         if user_id:

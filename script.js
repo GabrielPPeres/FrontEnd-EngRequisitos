@@ -5,7 +5,6 @@ document.getElementById("loginForm").addEventListener("submit", function(event) 
     const password = document.getElementById("password").value;
 
     fetch('http://127.0.0.1:5000/login', {
-
         method: 'POST',
         headers: {
             'Content-Type': 'application/x-www-form-urlencoded',
@@ -17,15 +16,17 @@ document.getElementById("loginForm").addEventListener("submit", function(event) 
     })
     .then(response => {
         if (!response.ok) {
-            throw new Error('Erro no login');
+            return response.json().then(data => {
+                throw new Error(data.message || 'Erro no login'); // Captura a mensagem do backend
+            });
         }
         return response.json();
     })
     .then(data => {
-        alert(data.message);
-        // Redirecionar ou fazer algo após o login bem-sucedido
+        alert(data.message); // Exibe a mensagem de sucesso
+        // Aqui você pode redirecionar ou fazer algo após o login bem-sucedido
     })
     .catch(error => {
-        document.getElementById("error-message").textContent = error.message;
+        document.getElementById("error-message").textContent = error.message; // Exibe a mensagem de erro
     });
 });
