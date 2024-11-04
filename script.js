@@ -1,28 +1,32 @@
-// Função para simular a recuperação de senha
-function recoverPassword() {
-    alert("Redirecionando para a recuperação de senha...");
-    // Aqui você pode adicionar a lógica para redirecionar ou abrir uma nova página para recuperar a senha
-}
-
-// Função de validação de login
 document.getElementById("loginForm").addEventListener("submit", function(event) {
-    event.preventDefault(); // Impede o envio do formulário para validação
+    event.preventDefault(); // Impede o envio normal do formulário
 
     const username = document.getElementById("username").value;
     const password = document.getElementById("password").value;
-    const errorMessage = document.getElementById("error-message");
 
-    if (username === "" || password === "") {
-        errorMessage.textContent = "Por favor, preencha todos os campos.";
-        return;
-    }
-
-    // Simulação de autenticação
-    if (username === "usuario" && password === "senha123") {
-        alert("Login bem-sucedido! Bem-vindo!");
-        errorMessage.textContent = "";
-        // Redirecionar para a página inicial ou área do usuário
-    } else {
-        errorMessage.textContent = "Usuário ou senha incorretos.";
-    }
+    fetch('http://127.0.0.1:5000/login', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/x-www-form-urlencoded',
+        },
+        body: new URLSearchParams({
+            'username': username,
+            'password': password
+        })
+    })
+    .then(response => {
+        if (!response.ok) {
+            return response.json().then(data => {
+                throw new Error(data.message || 'Erro no login'); // Captura a mensagem do backend
+            });
+        }
+        return response.json();
+    })
+    .then(data => {
+        alert(data.message); // Exibe a mensagem de sucesso
+        // Aqui você pode redirecionar ou fazer algo após o login bem-sucedido
+    })
+    .catch(error => {
+        document.getElementById("error-message").textContent = error.message; // Exibe a mensagem de erro
+    });
 });

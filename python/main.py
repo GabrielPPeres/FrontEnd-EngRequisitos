@@ -1,40 +1,43 @@
+from flask import Flask, request, jsonify
 from authModule import Auth
+from flask_cors import CORS
 
-def main():
-    auth = Auth()
+app = Flask(__name__)
+CORS(app)  # Habilita CORS para todas as rotas
 
-    while True:
-        print("\n1. Registrar")
-        print("2. Login")
-        print("3. Sair")
-        
-        choice = input("Escolha uma opção: ")
+auth = Auth()
 
-        try:
-            if choice == '1':
-                name = input("Digite o seu nome: ")
-                email = input("Digite o seu e-mail: ")
-                password = input("Crie uma senha: ")
-                auth.register_user(name, email, password)
+@app.route('/login', methods=['POST'])
+def login():
+    data = request.form
+    username = data.get('username')
+    password = data.get('password')
 
-            elif choice == '2':
-                email = input("Digite o seu e-mail: ")
-                password = input("Digite a sua senha: ")
-                if auth.login_user(email, password):
-                    print("Login realizado com sucesso!")
-                else:
-                    print("Falha no login. Verifique seu email e senha.")
+    # Validação básica
+    if not username or not password:
+        return jsonify({'message': 'Usuário e senha são obrigatórios.'}), 400
 
-            elif choice == '3':
-                print("Encerrando o programa.")
-                break
-            else:
-                print("Opção inválida. Tente novamente.")
+    if auth.login_user(username, password):
+        return jsonify({'status': 'success', 'message': 'Login realizado com sucesso!'}), 200
+    else:
+        return jsonify({'status': 'error', 'message': 'Falha no login. Verifique seu email e senha.'}), 401
+    
+@app.route('/register', methods=['POST'])
+def register():
+    data = request.form
+    name = data.get('name')
+    email = data.get('email')
+    password = data.get('password')
 
-        except Exception as e:
-            print(f"Ocorreu um erro: {e}")
+    # Validação básica
+    if not name or not email or not password:
+        return jsonify({'message': 'Nome, email e senha são obrigatórios.'}), 400
 
-    auth.close_connection()
+    try:
+        auth.register_user(name, email, password)
+        return jsonify({'status': 'success', 'message': 'Usuário registrado com sucesso!'}), 201
+    except Exception as e:
+        return jsonify({'status': 'error', 'message': 'Falha ao registrar usuário.', 'error': str(e)}), 500
 
 if __name__ == "__main__":
-    main()
+    app.run(debug=True)

@@ -289,3 +289,14 @@ button:hover,
         font-size: 1.5em;
     }
 }
+#error-message {
+    color: red; /* Cor para mensagens de erro */
+    font-weight: bold; /* Estilo negrito */
+    margin-top: 10px; /* Margem superior */
+}
+
+.success-message {
+    color: green; /* Cor para mensagens de sucesso */
+    font-weight: bold; /* Estilo negrito */
+    margin-top: 10px; /* Margem superior */
+}
