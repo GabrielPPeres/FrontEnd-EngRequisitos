@@ -1,7 +1,7 @@
 document.getElementById("loginForm").addEventListener("submit", function(event) {
     event.preventDefault(); // Impede o envio normal do formulário
 
-    const username = document.getElementById("username").value;
+    const username = document.getElementById("email").value;
     const password = document.getElementById("password").value;
 
     fetch('http://127.0.0.1:5000/login', {
