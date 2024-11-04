@@ -5,9 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
     <link rel="stylesheet" href="styles.css">
+    <!-- Font Awesome para os ícones -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
-    <!-- Cabeçalho -->
+    <!-- Cabeçalho fixo -->
     <header class="header">
         <div class="header-content">
             <div class="logo">
@@ -22,21 +24,38 @@
         </div>
     </header>
 
-    <!-- Contêiner de Conteúdo Principal -->
+    <!-- Contêiner principal para o conteúdo de login -->
     <main class="main-content">
-        <div class="login-container">
-            <h2>Faça seu login</h2>
-            <form id="loginForm" action="#">
-                <input type="text" id="username" placeholder="Usuário" required>
-                <input type="password" id="password" placeholder="Senha" required>
-                <button type="submit">Entrar</button>
-                <p id="error-message"></p>
-            </form>
-            <p class="forgot-password"><a href="recuperarsenha.html">Esqueceu a senha?</a></p>
+        <div class="container">
+            <!-- Seção de Login -->
+            <div class="login-section">
+                <h2>Entrar</h2>
+                <div class="social-login">
+                    <button class="social-btn"><i class="fab fa-google"></i></button>
+                    <button class="social-btn"><i class="fab fa-facebook-f"></i></button>
+                    <button class="social-btn"><i class="fab fa-github"></i></button>
+                    <button class="social-btn"><i class="fab fa-linkedin-in"></i></button>
+                </div>
+                <p class="info-text">ou use seu e-mail e senha</p>
+                <form id="loginForm" action="#">
+                    <input type="email" id="email" placeholder="E-mail" required>
+                    <input type="password" id="password" placeholder="Senha" required>
+                    <p class="forgot-password"><a href="recuperarsenha.html">Esqueceu sua senha?</a></p>
+                    <button type="submit" class="submit-btn">Entrar</button>
+                    <p id="error-message"></p>
+                </form>
+            </div>
+
+            <!-- Seção de Boas-Vindas -->
+            <div class="welcome-section">
+                <h2>Olá!</h2>
+                <p>Registre-se com seus dados para acessar todas as funcionalidades</p>
+                <button class="signup-btn">Cadastrar</button>
+            </div>
         </div>
     </main>
 
-    <!-- Rodapé -->
+    <!-- Rodapé fixo -->
     <footer class="footer">
         <p>&copy; 2024 Nome da Empresa. Todos os direitos reservados.</p>
         <a href="#">Termos de Uso</a> | <a href="#">Política de Privacidade</a>

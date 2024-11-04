@@ -1,13 +1,27 @@
 /* Variáveis de cor */
 :root {
-    --primary-color: #2c3e50;
-    --secondary-color: #2980b9;
-    --background-gradient-start: #2c3e50;
-    --background-gradient-end: #34495e;
-    --text-color: #ffffff;
-    --input-background: #ecf0f1;
-    --error-color: #e74c3c;
-    --confirmation-color: #2ecc71;
+    /* Cores Primárias e de Destaque */
+    --primary-color: #3a506b; /* Azul médio para botões e textos */
+    --secondary-color: #5b7083; /* Cinza-azulado */
+    --highlight-color: #e0e1dd; /* Cor clara para textos e elementos de destaque */
+    --text-color: #ffffff; /* Cor do texto geral */
+    --text-color-dark: #1a1a1a; /* Cor de texto mais escura para contraste */
+
+    /* Fundo e Gradiente */
+    --background-color: #08152a; /* Azul escuro profundo para o fundo */
+    --background-gradient-start: #2c3e50; /* Início do gradiente */
+    --background-gradient-end: #34495e; /* Final do gradiente */
+    --container-bg-color: #f1f4f9; /* Fundo claro para o container */
+    
+    /* Outros elementos */
+    --header-footer-color: #162a3c; /* Azul para cabeçalho e rodapé */
+    --input-background: #ecf0f1; /* Fundo dos inputs */
+    --input-text-color: #333333; /* Cor do texto nos inputs */
+    --box-shadow-color: rgba(0, 0, 0, 0.2); /* Sombra suave */
+    --button-text-color: #ffffff; /* Cor do texto nos botões */
+    --hover-text-color: #66a2d5; /* Azul mais claro para hover */
+    --error-color: #e74c3c; /* Cor para erros */
+    --confirmation-color: #2ecc71; /* Cor para confirmações */
 }
 
 /* Reset de margem e padding */
@@ -24,32 +38,33 @@ body {
     flex-direction: column;
     min-height: 100vh;
     background: linear-gradient(135deg, var(--background-gradient-start), var(--background-gradient-end));
-    color: var(--text-color);
+    color: var(--highlight-color);
 }
 
 /* Cabeçalho fixo */
 .header {
-    width: 100%;
-    position: fixed;
-    top: 0;
-    left: 0;
+    background-color: var(--header-footer-color);
+    color: var(--button-text-color);
     padding: 10px 20px;
-    background-color: var(--primary-color);
-    color: var(--text-color);
     display: flex;
     justify-content: space-between;
     align-items: center;
+    position: fixed;
+    width: 100%;
+    top: 0;
     z-index: 1000;
 }
 
 .header-content {
     display: flex;
     align-items: center;
-    gap: 10px;
+    width: 100%;
+    justify-content: space-between;
 }
 
 .header .logo img {
-    max-width: 50px;
+    width: 40px;
+    height: 40px;
 }
 
 .header h1 {
@@ -63,60 +78,94 @@ body {
 }
 
 .header nav a {
-    color: var(--text-color);
+    color: var(--highlight-color);
     text-decoration: none;
-    font-size: 1rem;
+    padding: 8px 16px;
+    border-radius: 8px;
+    transition: background-color 0.3s, box-shadow 0.3s;
 }
 
 .header nav a:hover {
-    color: var(--secondary-color);
+    background-color: rgba(255, 255, 255, 0.1);
+    box-shadow: 0 2px 5px var(--box-shadow-color);
 }
 
-/* Contêiner principal */
-.main-content {
-    flex: 1;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding-top: 80px; /* Espaço para o cabeçalho fixo */
-    padding-bottom: 50px; /* Espaço para o rodapé fixo */
-}
-
-/* Contêiner de Login */
-.login-container {
-    background: #ffffff;
-    padding: 40px;
-    border-radius: 10px;
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+/* Rodapé fixo */
+.footer {
+    background-color: var(--header-footer-color);
+    color: var(--highlight-color);
     text-align: center;
+    padding: 10px;
+    position: fixed;
     width: 100%;
-    max-width: 400px;
+    bottom: 0;
 }
 
-/* Título */
-h2 {
-    font-size: 1.6rem;
-    color: var(--primary-color);
+/* Estilos principais do conteúdo */
+.main-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+    padding-top: 80px;
+    padding-bottom: 40px;
+}
+
+.container {
+    display: flex;
+    width: 80%;
+    max-width: 900px;
+    background-color: var(--container-bg-color);
+    box-shadow: 0 4px 12px var(--box-shadow-color);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+/* Seções de Login e Boas-vindas */
+.login-section,
+.welcome-section {
+    padding: 40px;
+    flex: 1;
+    text-align: center;
+}
+
+.login-section h2,
+.welcome-section h2 {
+    font-size: 1.8em;
+    color: var(--text-color-dark);
     margin-bottom: 20px;
-    font-weight: 600;
 }
 
-/* Formulário */
+.info-text {
+    color: #616060; 
+    font-size: 1rem;
+    text-align: center;
+}
+
+.reset-password-instruction {
+    color: #616060; 
+    font-size: 0.9rem;
+    text-align: center;
+    margin-top: 10px;
+}
+
+
+/* Formulário e Inputs */
 form {
     display: flex;
     flex-direction: column;
     gap: 10px;
 }
 
-/* Campos de entrada */
-input[type="text"],
-input[type="password"],
-input[type="email"] {
+form input[type="text"],
+form input[type="password"],
+form input[type="email"] {
     padding: 12px;
     background-color: var(--input-background);
-    border: 1px solid #ccc;
-    border-radius: 6px;
-    font-size: 1rem;
+    border: 1px solid var(--secondary-color);
+    border-radius: 5px;
+    font-size: 1em;
+    color: var(--input-text-color);
     transition: border 0.3s;
 }
 
@@ -126,70 +175,117 @@ input:focus {
     box-shadow: 0 0 8px rgba(41, 128, 185, 0.3);
 }
 
-/* Botão */
-button {
-    padding: 12px;
-    background-color: var(--secondary-color);
-    color: var(--text-color);
+/* Botões */
+button,
+.submit-btn {
+    padding: 10px;
+    background-color: var(--primary-color);
+    color: var(--button-text-color);
     border: none;
-    border-radius: 6px;
-    font-size: 1rem;
+    border-radius: 5px;
+    font-size: 1em;
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    transition: background-color 0.3s;
     font-weight: bold;
-    margin-top: 10px;
 }
 
-button:hover {
-    background-color: #21618c;
+button:hover,
+.submit-btn:hover {
+    background-color: var(--hover-text-color);
+}
+
+/* Botões de login social */
+.social-login {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.social-btn {
+    width: 40px;
+    height: 40px;
+    border: none;
+    border-radius: 50%;
+    background-color: var(--secondary-color);
+    color: var(--button-text-color);
+    font-size: 1.2em;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.social-btn:hover {
+    background-color: var(--hover-text-color);
 }
 
 /* Links */
 .forgot-password {
+    font-size: 0.9em;
+    text-align: center;
     margin-top: 15px;
-    font-size: 0.9rem;
 }
 
 .forgot-password a {
-    color: var(--secondary-color);
+    color: var(--primary-color);
     text-decoration: none;
+    transition: color 0.3s;
 }
 
 .forgot-password a:hover {
-    color: #1a5276;
+    color: var(--hover-text-color);
     text-decoration: underline;
 }
 
-/* Rodapé fixo */
-.footer {
-    width: 100%;
+/* Seção de Boas-Vindas */
+.welcome-section {
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: var(--highlight-color);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.signup-btn {
     padding: 10px;
-    background-color: var(--primary-color);
-    color: var(--text-color);
-    text-align: center;
-    font-size: 0.9rem;
-    position: fixed;
-    bottom: 0;
-    left: 0;
+    background-color: transparent;
+    color: var(--highlight-color);
+    border: 2px solid var(--highlight-color);
+    border-radius: 5px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
 }
 
-.footer a {
-    color: var(--secondary-color);
-    text-decoration: none;
-    margin: 0 5px;
+.signup-btn:hover {
+    background-color: var(--highlight-color);
+    color: var(--primary-color);
 }
 
-.footer a:hover {
-    text-decoration: underline;
+/* Responsividade */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+        width: 90%;
+    }
+
+    .header h1, .header nav a {
+        font-size: 0.9em;
+    }
+
+    .header nav a {
+        margin-left: 15px;
+    }
 }
 
-/* Ajuste para dispositivos móveis */
 @media (max-width: 480px) {
     .header h1 {
-        font-size: 1.2rem;
+        font-size: 0.8em;
     }
-    
-    .login-container {
-        padding: 20px;
+
+    .welcome-section h2, .login-section h2 {
+        font-size: 1.5em;
     }
 }
