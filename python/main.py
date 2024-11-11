@@ -3,7 +3,7 @@ from authModule import Auth
 from flask_cors import CORS
 
 app = Flask(__name__)
-CORS(app)  # Habilita CORS para todas as rotas
+CORS(app)  # Habilita CORS para todas as rotas nao meche nesta merda da erro pra krl
 
 auth = Auth()
 

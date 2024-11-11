@@ -5,30 +5,49 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
     <link rel="stylesheet" href="styles.css">
-    <!-- Font Awesome para os ícones -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
-    <!-- Cabeçalho fixo -->
     <header class="header">
         <div class="header-content">
+            <!-- Logo e nome da empresa -->
             <div class="logo">
                 <img src="sua-logo.png" alt="Logo da Empresa">
+                <h1>HardSet</h1>
             </div>
-            <h1>Nome da Empresa</h1>
-            <nav>
-                <a href="#">Home</a>
-                <a href="#">Sobre</a>
-                <a href="#">Contato</a>
-            </nav>
+            
+            <!-- Barra de pesquisa -->
+            <div class="search-bar">
+                <input type="text" placeholder="Pesquise aqui!" />
+                <button><i class="fas fa-search"></i></button>
+            </div>
+            
+            <!-- Ícones de funcionalidades -->
+            <div class="header-icons">
+                <a href="#"><i class="fas fa-star"></i></a>             <!-- Estrela (favoritos) -->
+                <a href="#"><i class="fas fa-universal-access"></i></a> <!-- Acessibilidade -->
+                <a href="#"><i class="fas fa-headset"></i></a>          <!-- Suporte -->
+                <a href="#"><i class="fas fa-shopping-cart"></i></a>    <!-- Carrinho -->
+            </div>
+        </div>
+        
+        <!-- Subseção de botões de navegação abaixo do cabeçalho -->
+        <div class="header-submenu">
+            <a href="#">OFERTA DO DIA</a>
+            <a href="#">MAIS COMPRADOS</a>
+            <a href="#">FRETE GRÁTIS</a>
+            <a href="#">HARDWARE</a>
+            <a href="#">PERIFÉRICOS</a>
+            <a href="#">COMPUTADORES</a>
+            <a href="#">NOTEBOOK</a>
+            <a href="#">CATEGORIAS</a>
         </div>
     </header>
 
-    <!-- Contêiner principal para o conteúdo de login -->
     <main class="main-content">
-        <div class="container">
+        <div class="container" id="container">
             <!-- Seção de Login -->
-            <div class="login-section">
+            <div class="login-section" id="loginSection">
                 <h2>Entrar</h2>
                 <div class="social-login">
                     <button class="social-btn"><i class="fab fa-google"></i></button>
@@ -46,17 +65,15 @@
                 </form>
             </div>
 
-            <!-- Seção de Boas-Vindas -->
-            <div class="welcome-section">
-                <h2>Olá!</h2>
-                <p>Registre-se com seus dados para acessar todas as funcionalidades</p>
-                <button class="signup-btn">Cadastrar</button>
+            <!-- Seção de Boas-Vindas com botão de Cadastrar -->
+            <div class="welcome-section" id="welcomeSection">
+                <h2 id="welcomeTitle">Olá!</h2>
+                <p id="welcomeMessage">Registre-se com seus dados para acessar todas as funcionalidades</p>
+                <a href="cadastrar.html"><button class="toggle-btn" id="toggleButton">Cadastrar</button></a>
             </div>
-
         </div>
     </main>
 
-    <!-- Rodapé fixo -->
     <footer class="footer">
         <p>&copy; 2024 Nome da Empresa. Todos os direitos reservados.</p>
         <a href="#">Termos de Uso</a> | <a href="#">Política de Privacidade</a>
