@@ -10,15 +10,37 @@
 <body>
     <header class="header">
         <div class="header-content">
+            <!-- Logo e nome da empresa -->
             <div class="logo">
                 <img src="sua-logo.png" alt="Logo da Empresa">
+                <h1>HardSet</h1>
             </div>
-            <h1>HardSet</h1>
-            <nav>
-                <a href="#">Home</a>
-                <a href="#">Sobre</a>
-                <a href="#">Contato</a>
-            </nav>
+            
+            <!-- Barra de pesquisa -->
+            <div class="search-bar">
+                <input type="text" placeholder="Pesquise aqui!" />
+                <button><i class="fas fa-search"></i></button>
+            </div>
+            
+            <!-- Ícones de funcionalidades -->
+            <div class="header-icons">
+                <a href="#"><i class="fas fa-star"></i></a>             <!-- Estrela (favoritos) -->
+                <a href="#"><i class="fas fa-universal-access"></i></a> <!-- Acessibilidade -->
+                <a href="#"><i class="fas fa-headset"></i></a>          <!-- Suporte -->
+                <a href="#"><i class="fas fa-shopping-cart"></i></a>    <!-- Carrinho -->
+            </div>
+        </div>
+        
+        <!-- Subseção de botões de navegação abaixo do cabeçalho -->
+        <div class="header-submenu">
+            <a href="#">OFERTA DO DIA</a>
+            <a href="#">MAIS COMPRADOS</a>
+            <a href="#">FRETE GRÁTIS</a>
+            <a href="#">HARDWARE</a>
+            <a href="#">PERIFÉRICOS</a>
+            <a href="#">COMPUTADORES</a>
+            <a href="#">NOTEBOOK</a>
+            <a href="#">CATEGORIAS</a>
         </div>
     </header>
 
@@ -27,6 +49,13 @@
             <!-- Seção de Cadastro -->
             <div class="signup-section" id="signupSection">
                 <h2>Bem-vindo!</h2>
+                <div class="social-signup">
+                    <button class="social-btn"><i class="fab fa-google"></i></button>
+                    <button class="social-btn"><i class="fab fa-facebook-f"></i></button>
+                    <button class="social-btn"><i class="fab fa-github"></i></button>
+                    <button class="social-btn"><i class="fab fa-linkedin-in"></i></button>
+                </div>
+                <p class="info-text">ou use seu e-mail e senha</p>
                 <form id="signupForm" action="#">
                     <input type="text" id="nome" placeholder="Nome" required>
                     <input type="email" id="signupEmail" placeholder="E-mail" required>
