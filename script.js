@@ -63,8 +63,5 @@ function toggleSections() {
         welcomeTitle.textContent = "Bem-vindo!";
         welcomeMessage.textContent = "Já possui uma conta? Clique no botão abaixo para voltar ao login.";
         toggleButton.textContent = "Login";
-
-        // Adiciona a classe para inverter o layout
-        container.classList.add("invert-layout");
     }
 }
