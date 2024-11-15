@@ -6,6 +6,7 @@
     <title>Cadastro</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script src="script.js" defer></script>
 </head>
 <body>
     <header class="header">
@@ -56,11 +57,12 @@
                     <button class="social-btn"><i class="fab fa-linkedin-in"></i></button>
                 </div>
                 <p class="info-text">ou use seu e-mail e senha</p>
-                <form id="signupForm" action="#">
-                    <input type="text" id="nome" placeholder="Nome" required>
-                    <input type="email" id="signupEmail" placeholder="E-mail" required>
-                    <input type="password" id="signupPassword" placeholder="Senha" required>
+                <form id="signupForm">
+                    <input type="text" id="name" placeholder="Nome" required>
+                    <input type="email" id="email" placeholder="E-mail" required>
+                    <input type="password" id="password" placeholder="Senha" required>
                     <button type="submit">Finalizar Cadastro</button>
+                    <p id="error-message"></p>
                 </form>
             </div>
 
@@ -78,6 +80,8 @@
         <a href="#">Termos de Uso</a> | <a href="#">Política de Privacidade</a>
     </footer>
 
-    <script src="script.js"></script>
+    <!-- Scripts para cadastro e alternância -->
+    <script src="register.js"></script>
+    <script src="toggle.js"></script>
 </body>
 </html>

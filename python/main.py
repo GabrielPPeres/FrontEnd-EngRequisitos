@@ -1,4 +1,5 @@
 from flask import Flask, request, jsonify
+from psycopg2 import IntegrityError
 from authModule import Auth
 from flask_cors import CORS
 
@@ -34,9 +35,14 @@ def register():
         return jsonify({'message': 'Nome, email e senha são obrigatórios.'}), 400
 
     try:
-        auth.register_user(name, email, password)
-        return jsonify({'status': 'success', 'message': 'Usuário registrado com sucesso!'}), 201
+        user_id = auth.register_user(name, email, password)
+        if user_id:  # Se o ID do usuário for retornado, o registro foi bem-sucedido
+            return jsonify({'status': 'success', 'message': 'Usuário registrado com sucesso! Redirecionando para a tela de loguin!'}), 201
+        else:
+            # Se o retorno for None, significa que houve um erro no registro (ex: e-mail duplicado)
+            return jsonify({'status': 'error', 'message': 'E-mail já cadastrado ou erro desconhecido.'}), 400
     except Exception as e:
+        # Captura qualquer outro erro genérico
         return jsonify({'status': 'error', 'message': 'Falha ao registrar usuário.', 'error': str(e)}), 500
 
 if __name__ == "__main__":

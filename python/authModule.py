@@ -1,3 +1,4 @@
+from psycopg2 import IntegrityError
 from dataBaseModule import Database
 
 # Classe de autenticacao do user
@@ -14,14 +15,28 @@ class Auth:
         return str(hashed)  # Converte o resultado para string
 
     def register_user(self, name, email, password):
-        #registra um novo user no banco de dados
+        # Registra um novo usuário no banco de dados
         hashed_password = self.simple_hash(password)  # Usar a função simple_hash para criptografar
-        user_id = self.db.create_user(name, email, hashed_password)
-        
-        if user_id:
-            print(f"Usuário {name} registrado com o ID {user_id}")
-        else:
-            print("Falha ao se registrar")
+
+        try:
+            user_id = self.db.create_user(name, email, hashed_password)
+            if user_id:
+                print(f"Usuário {name} registrado com o ID {user_id}")
+                return user_id
+            else:
+                print("Falha ao se registrar")
+                return None
+        except IntegrityError as e:
+            # Verifica se o erro é devido a duplicação de e-mail (erro de chave única)
+            if 'users_email_key' in str(e):  # Ajuste de acordo com a chave única de seu banco (nome da constraint)
+                print("Erro: O e-mail já está cadastrado.")
+                return None  # Retorna None para indicar falha no registro devido a duplicação de e-mail
+            else:
+                print(f"Erro desconhecido: {str(e)}")
+                return None
+        except Exception as e:
+            print(f"Falha ao registrar usuário: {str(e)}")
+            return None
 
     def login_user(self, email, password):
         """Realiza o login de um usuário utilizando o e-mail e a senha fornecidos."""
