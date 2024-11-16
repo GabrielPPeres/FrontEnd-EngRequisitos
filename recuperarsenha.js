@@ -14,3 +14,9 @@ document.getElementById("forgotPasswordForm").addEventListener("submit", functio
     confirmationMessage.textContent = "Instruções de recuperação de senha foram enviadas para o seu e-mail.";
     confirmationMessage.style.color = "green";
 });
+
+// Redirecionar ao clicar no botão "Contato Suporte"
+document.getElementById("contact-support-btn").addEventListener("click", function() {
+    // Redireciona para a página de contato de suporte
+    window.location.href = "https://wa.me/556298704033";  // Substitua pela URL desejada
+});
