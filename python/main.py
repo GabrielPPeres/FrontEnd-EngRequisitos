@@ -1,5 +1,4 @@
 from flask import Flask, request, jsonify
-from psycopg2 import IntegrityError
 from authModule import Auth
 from flask_cors import CORS
 
