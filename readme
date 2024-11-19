@@ -1,3 +1,15 @@
-* precisa ter o python instalado
+para que o sistema funcione corretamente é necessario fazer algumas configurações antes como
 
-*pracisa criar o banco de dados sql utilizando o postgres
+1- instalar o banco de dados postgre SQL após isso fazer a configuração do arquivo *dataBaseModule.py* colocando as informalções do seu banco de dados
+
+2- instalar as bibliotecas do projeto.
+    o projeto tem algumas bibliotecas que precisam ser instaladas para que ocorra tudo certo para fazer esta instalação utilize em seu terminal
+    pip install flask
+    pip install flask_cors
+    pip install psycopg2
+
+3- após fazer toda a configuração é necessario executar o arquivo main.py
+
+logo após fazer estes 3 passos já é possivel fazer loguin no site
+
+** caso for utilizar em seu projeto tenha certeza de fazer a configuração correta dos arquivos vinculando .js
