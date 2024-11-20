@@ -1,15 +1,29 @@
-para que o sistema funcione corretamente é necessario fazer algumas configurações antes como
+## Configuração do Projeto
 
-1- instalar o banco de dados postgre SQL após isso fazer a configuração do arquivo *dataBaseModule.py* colocando as informalções do seu banco de dados
+Para que o sistema funcione corretamente, é necessário realizar algumas etapas de configuração antes de iniciar o uso. Siga as instruções abaixo:
 
-2- instalar as bibliotecas do projeto.
-    o projeto tem algumas bibliotecas que precisam ser instaladas para que ocorra tudo certo para fazer esta instalação utilize em seu terminal
-    pip install flask
-    pip install flask_cors
-    pip install psycopg2
+### 1. Configurar o Banco de Dados
+- Instale o **PostgreSQL** em sua máquina.
+- Após a instalação, configure o arquivo `dataBaseModule.py`, inserindo as informações do seu banco de dados, como host, usuário, senha e nome do banco.
 
-3- após fazer toda a configuração é necessario executar o arquivo main.py
+### 2. Instalar as Dependências
+- Este projeto utiliza algumas bibliotecas Python que devem ser instaladas. No terminal, execute os comandos abaixo:
+  
+  pip install flask
+  pip install flask_cors
+  pip install psycopg2
+  
+  Certifique-se de estar no ambiente virtual correto, se estiver usando um.
 
-logo após fazer estes 3 passos já é possivel fazer loguin no site
+### 3. Executar o Projeto
+- Com todas as configurações realizadas, inicie o sistema executando o arquivo `main.py`:
+  
+  python main.py
+  
 
-** caso for utilizar em seu projeto tenha certeza de fazer a configuração correta dos arquivos vinculando .js
+### 4. Acessar o Sistema
+- Após seguir os passos acima, o site estará pronto para uso. Você poderá realizar login diretamente na interface.
+
+
+### Observação
+- Caso deseje integrar este projeto ao seu próprio sistema, assegure-se de configurar corretamente os arquivos JavaScript vinculados, garantindo que as funcionalidades se conectem de maneira adequada.

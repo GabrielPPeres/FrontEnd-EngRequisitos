@@ -250,11 +250,11 @@ body {
 }
 
 .forgot-password form input[type="email"] {
-    margin-bottom: 30px; /* Espaçamento adicional abaixo do campo de e-mail */
+    margin-bottom: 30px; 
 }
 
 .forgot-password form .submit-btn {
-    margin-top: 22px; /* Espaçamento adicional acima do botão */
+    margin-top: 22px; 
 }
 
 .reset-password-instruction {
