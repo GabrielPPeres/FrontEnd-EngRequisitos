@@ -18,5 +18,5 @@ document.getElementById("forgotPasswordForm").addEventListener("submit", functio
 // Redirecionar ao clicar no botão "Contato Suporte"
 document.getElementById("contact-support-btn").addEventListener("click", function() {
     // Redireciona para a página de contato de suporte
-    window.location.href = "https://wa.me/556298704033";  // Substitua pela URL desejada
+    window.location.href = "https://wa.me/5562986017906";  // Substitua pela URL desejada
 });
