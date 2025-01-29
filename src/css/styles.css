@@ -1,0 +1,428 @@
+/* Variáveis de cor */
+:root {
+    /* Paleta principal */
+    --primary-color: #3a506b;
+    --secondary-color: #5b7083;
+    --highlight-color: #e0e1dd;
+    --text-color: #ffffff;
+    --text-color-dark: #1a1a1a;
+
+    /* Fundo e gradiente */
+    --background-color: #08152a;
+    --background-gradient-start: #2c3e50;
+    --background-gradient-end: #34495e;
+    
+    /* Elementos e sombreamento */
+    --container-bg-color: #f1f4f9;
+    --header-footer-color: #162a3c;
+    --submenu-bg-color: #1e3a5f;
+    --input-background: #ecf0f1;
+    --input-text-color: #333333;
+    --box-shadow-color: rgba(0, 0, 0, 0.2);
+    
+    /* Cores de botão e texto em destaque */
+    --button-text-color: #ffffff;
+    --hover-text-color: #66a2d5;
+    --error-color: #e74c3c;
+    --confirmation-color: #2ecc71;
+}
+
+/*Reset de estilos globais*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+/*Layout geral da página*/
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background: linear-gradient(135deg, var(--background-gradient-start), var(--background-gradient-end));
+    color: var(--highlight-color);
+}
+
+/* Estilos do cabeçalho */
+.header {
+    background-color: var(--header-footer-color);
+    color: var(--button-text-color);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+
+/* Conteúdo interno do cabeçalho */
+.header-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    margin: 13px;
+}
+
+/* Estilo da logo */
+.header .logo {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0px 10px;
+}
+
+.header .logo img {
+    width: 60px;
+    height: 60px;
+    margin: 0px 10px;
+}
+
+.header h1 {
+    font-size: 1.5rem;
+    color: var(--highlight-color);
+}
+
+/* Ícones e links de navegação no cabeçalho */
+.header-icons,
+.header nav {
+    display: flex;
+    gap: 15px;
+    padding: 0px 10px;
+}
+
+.header-icons a,
+.header nav a {
+    color: var(--highlight-color);
+    text-decoration: none;
+    font-size: 1.2em;
+    padding: 8px 12px;
+    border-radius: 5px;
+    transition: color 0.3s, background-color 0.3s;
+}
+
+.header-icons a:hover,
+.header nav a:hover {
+    color: var(--hover-text-color);
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Submenu */
+.header-submenu {
+    display: flex;
+    justify-content: space-between;
+    background-color: var(--submenu-bg-color);
+    width: 100%;
+    padding: 12px 60px;
+    gap: 15px;
+}
+
+.header-submenu a {
+    font-weight: bold;
+    color: var(--highlight-color);
+    text-decoration: none;
+    font-size: 0.9em;
+    transition: color 0.3s, background-color 0.3s;
+}
+
+.header-submenu a:hover {
+    color: var(--hover-text-color);
+}
+
+/* Barra de pesquisa */
+.search-bar {
+    display: flex;
+    align-items: center;
+    flex: 1;
+    max-width: 400px;
+    margin: 0 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px var(--box-shadow-color);
+    overflow: hidden;
+}
+
+.search-bar input {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    outline: none;
+    font-size: 1em;
+    color: var(--input-text-color);
+    background-color: var(--input-background);
+}
+
+.search-bar button {
+    padding: 10px;
+    background-color: var(--primary-color);
+    color: var(--button-text-color);
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.search-bar button:hover {
+    background-color: var(--hover-text-color);
+}
+
+/* Rodapé fixo */
+.footer {
+    background-color: var(--header-footer-color);
+    color: var(--highlight-color);
+    text-align: center;
+    padding: 10px;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+}
+
+/* Conteúdo principal */
+.main-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+    padding-top: 80px;
+    padding-bottom: 40px;
+}
+
+/* Container principal */
+.container {
+    display: flex;
+    width: 80%;
+    max-width: 900px;
+    background-color: var(--container-bg-color);
+    box-shadow: 0 4px 12px var(--box-shadow-color);
+    border-radius: 8px;
+    overflow: hidden;
+    min-height: 400px;
+    height: 400px;
+}
+
+/* Seções internas */
+.login-section,
+.signup-section {
+    padding: 10px 40px;
+    flex: 1;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.forgot-password{
+    padding: 10px 40px;
+    flex: 1;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.login-section h2,
+.signup-section h2,
+.forgot-password h2 {
+    font-size: 1.8em;
+    color: var(--text-color-dark);
+    margin-top: 3%;
+
+}
+
+.welcome-section h2{
+    font-size: 1.8em;
+    color: var(--text-color-dark);
+}
+
+.welcome-section{
+    padding: 0px 40px;
+    flex: 1;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: var(--highlight-color);
+    gap:20px;
+}
+
+.reset-password-instruction,
+.info-text {
+    color: var(--text-color-dark);
+}
+
+.forgot-password form input[type="email"] {
+    margin-bottom: 30px; 
+}
+
+.forgot-password form .submit-btn {
+    margin-top: 22px; 
+}
+
+.reset-password-instruction {
+    margin-bottom: 15px;
+    margin-top: 30px;
+}
+
+.back-to-login{
+    padding: 2px 2px;
+}
+
+/* Formulário e Inputs */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+form input[type="text"],
+form input[type="password"],
+form input[type="email"] {
+    padding: 12px;
+    background-color: var(--input-background);
+    border: 1px solid var(--secondary-color);
+    border-radius: 5px;
+    font-size: 1em;
+    color: var(--input-text-color);
+    transition: border 0.3s;
+    margin-top: 10px;
+}
+
+input:focus {
+    border-color: var(--secondary-color);
+    outline: none;
+    box-shadow: 0 0 8px rgba(41, 128, 185, 0.3);
+}
+
+/* Botões */
+button,
+.submit-btn {
+    padding: 10px;
+    background-color: var(--primary-color);
+    color: var(--button-text-color);
+    border: none;
+    border-radius: 5px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    font-weight: bold;
+}
+
+button:hover,
+.submit-btn:hover {
+    background-color: var(--hover-text-color);
+}
+
+.forgot-password-btn {
+    padding: 10px;
+    background-color: transparent;
+    color: var(--highlight-color);
+    border: 2px solid var(--highlight-color);
+    border-radius: 5px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.forgot-password-btn:hover {
+    background-color: var(--highlight-color);
+    color: var(--primary-color);
+}
+
+/* Social login */
+.social-signup,
+.social-login {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.social-btn {
+    width: 40px;
+    height: 40px;
+    background-color: var(--secondary-color);
+    color: var(--button-text-color);
+    font-size: 1.2em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s, color 0.3s;
+    border-radius: 50%;
+}
+
+
+.social-btn:hover {
+    background-color: var(--hover-text-color);
+}
+
+/* Link de recuperação de senha */
+.forgot-password a {
+    color: var(--primary-color);
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.forgot-password a:hover {
+    color: var(--hover-text-color);
+    text-decoration: underline;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .container,
+    .header-content {
+        flex-direction: column;
+        align-items: center;
+        width: 90%;
+        text-align: center;
+    }
+
+    .header h1,
+    .header nav a {
+        font-size: 1em;
+    }
+
+    .header nav a,
+    .header-submenu a {
+        padding: 6px 12px;
+    }
+
+    .header-submenu {
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+
+    .search-bar {
+        width: 100%;
+        max-width: 100%;
+        margin: 10px 0;
+    }
+}
+
+@media (max-width: 480px) {
+    .header h1 {
+        font-size: 0.8em;
+    }
+
+    .header-submenu a {
+        font-size: 0.8em;
+        padding: 6px 10px;
+    }
+
+    .login-section h2,
+    .signup-section h2 {
+        font-size: 1.5em;
+    }
+}
+
+/* Estilos de mensagens de erro e sucesso */
+#error-message {
+    color: var(--error-color);
+    font-weight: bold;
+    margin-top: 1px;
+}
+
+.success-message {
+    color: var(--confirmation-color);
+    font-weight: bold;
+    margin-top: 10px;
+}

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recuperação de Senha</title>
+    <link rel="icon" href="file.ico" type="image/x-icon">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header class="header">
+        <div class="header-content">
+            <!-- Logo e nome da empresa -->
+            <div class="logo">
+                <img src="logoHardsetofc.png" alt="Logo da Empresa">
+                <h1>HardSet</h1>
+            </div>
+            
+            <!-- Barra de pesquisa -->
+            <div class="search-bar">
+                <input type="text" placeholder="Pesquise aqui!" />
+                <button><i class="fas fa-search"></i></button>
+            </div>
+            
+            <!-- Ícones de funcionalidades -->
+            <div class="header-icons">
+                <a href="#"><i class="fas fa-star"></i></a>             <!-- Estrela (favoritos) -->
+                <a href="#"><i class="fas fa-universal-access"></i></a> <!-- Acessibilidade -->
+                <a href="#"><i class="fas fa-headset"></i></a>          <!-- Suporte -->
+                <a href="#"><i class="fas fa-shopping-cart"></i></a>    <!-- Carrinho -->
+            </div>
+        </div>
+        
+        <!-- Subseção de botões de navegação abaixo do cabeçalho -->
+        <div class="header-submenu">
+            <a href="#">OFERTA DO DIA</a>
+            <a href="#">MAIS COMPRADOS</a>
+            <a href="#">FRETE GRÁTIS</a>
+            <a href="#">HARDWARE</a>
+            <a href="#">PERIFÉRICOS</a>
+            <a href="#">COMPUTADORES</a>
+            <a href="#">NOTEBOOK</a>
+            <a href="#">CATEGORIAS</a>
+        </div>
+    </header>
+
+    <main class="main-content">
+        <div class="container">
+            <!-- Seção de Recuperação de Senha -->
+            <div class="forgot-password" id="forgotPassword">
+                <h2 Class="title-principal">Recuperação de Senha</h2>
+                <p class="reset-password-instruction">Insira seu e-mail para receber um link de redefinição de senha.</p>
+                <form id="forgotPasswordForm" action="#">
+                    <input type="email" id="email" placeholder="E-mail" required>
+                    <button type="submit" class="submit-btn">Enviar Link</button>
+                </form>
+                <p id="confirmation-message"></p>
+                <p class="back-to-login"><a href="login.html">Voltar para o login</a></p>
+            </div>
+
+            <!-- Seção de Ajuda com botão de Contato -->
+            <div class="welcome-section">
+                <h2>Precisa de Ajuda?</h2>
+                <p class="help-text">Entre em contato com o suporte caso tenha problemas para acessar sua conta.</p>
+                <button class="forgot-password-btn" id="contact-support-btn">Contato Suporte</button>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <p>&copy; 2024 Nome da Empresa. Todos os direitos reservados.</p>
+        <a href="#">Termos de Uso</a> | <a href="#">Política de Privacidade</a>
+    </footer>
+
+    <script src="recuperarsenha.js"></script>
+</body>
+</html>
