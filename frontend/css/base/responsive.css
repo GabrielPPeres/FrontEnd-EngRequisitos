@@ -44,3 +44,16 @@
         font-size: 1.5em;
     }
 }
+
+/* Estilos de mensagens de erro e sucesso */
+#error-message {
+    color: var(--error-color);
+    font-weight: bold;
+    margin-top: 1px;
+}
+
+.success-message {
+    color: var(--confirmation-color);
+    font-weight: bold;
+    margin-top: 10px;
+}
