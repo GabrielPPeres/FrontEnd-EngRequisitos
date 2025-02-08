@@ -1,0 +1,27 @@
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background: linear-gradient(135deg, var(--background-gradient-start), var(--background-gradient-end));
+}
+
+.container {
+    display: flex;
+    width: 80%;
+    max-width: 900px;
+    background-color: var(--container-bg-color);
+    box-shadow: 0 4px 12px var(--box-shadow-color);
+    border-radius: 8px;
+    overflow: hidden;
+    min-height: 400px;
+    height: 400px;
+}
+
+.main-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+    padding-top: 80px;
+    padding-bottom: 40px;
+}

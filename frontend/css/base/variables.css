@@ -1,0 +1,27 @@
+:root {
+    /* Paleta principal */
+    --primary-color: #3a506b;
+    --secondary-color: #5b7083;
+    --highlight-color: #e0e1dd;
+    --text-color: #ffffff;
+    --text-color-dark: #1a1a1a;
+
+    /* Fundo e gradiente */
+    --background-color: #08152a;
+    --background-gradient-start: #2c3e50;
+    --background-gradient-end: #34495e;
+    
+    /* Elementos e sombreamento */
+    --container-bg-color: #f1f4f9;
+    --header-footer-color: #162a3c;
+    --submenu-bg-color: #1e3a5f;
+    --input-background: #ecf0f1;
+    --input-text-color: #333333;
+    --box-shadow-color: rgba(0, 0, 0, 0.2);
+    
+    /* Cores de botão e texto em destaque */
+    --button-text-color: #ffffff;
+    --hover-text-color: #66a2d5;
+    --error-color: #e74c3c;
+    --confirmation-color: #2ecc71;
+}

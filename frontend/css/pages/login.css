@@ -1,0 +1,18 @@
+.login-section {
+    padding: 10px 40px;
+    flex: 1;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.login-section h2 {
+    margin-top: 3%;
+}
+
+.social-login {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 20px;
+}

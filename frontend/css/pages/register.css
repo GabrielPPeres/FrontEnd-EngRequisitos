@@ -1,0 +1,18 @@
+.signup-section {
+    padding: 10px 40px;
+    flex: 1;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.signup-section h2 {
+    margin-top: 3%;
+}
+
+.social-signup {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 20px;
+}
