@@ -25,3 +25,8 @@ a:hover {
     color: var(--hover-text-color);
     text-decoration: underline;
 }
+
+.reset-password-instruction,
+.info-text {
+    color: var(--text-color-dark);
+}

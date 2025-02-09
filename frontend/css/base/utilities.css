@@ -25,3 +25,20 @@ body {
     padding-top: 80px;
     padding-bottom: 40px;
 }
+
+.welcome-section h2 {
+    font-size: 1.8em;
+    color: var(--text-color-dark);
+}
+
+.welcome-section {
+    padding: 0px 40px;
+    flex: 1;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: var(--highlight-color);
+    gap: 20px;
+}

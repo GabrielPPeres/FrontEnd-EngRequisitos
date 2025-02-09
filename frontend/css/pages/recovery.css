@@ -7,7 +7,10 @@
 }
 
 .forgot-password h2 {
+    font-size: 1.8em;
+    color: var(--text-color-dark);
     margin-top: 3%;
+
 }
 
 .reset-password-instruction {
@@ -21,4 +24,13 @@
 
 .forgot-password form .submit-btn {
     margin-top: 22px;
+}
+
+.forgot-password a:hover {
+    color: var(--hover-text-color);
+    text-decoration: underline;
+}
+
+.back-to-login {
+    padding: 2px 2px;
 }

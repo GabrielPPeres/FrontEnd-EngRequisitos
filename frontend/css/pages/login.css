@@ -7,12 +7,14 @@
 }
 
 .login-section h2 {
+    font-size: 1.8em;
+    color: var(--text-color-dark);
     margin-top: 3%;
 }
-
 .social-login {
     display: flex;
     justify-content: center;
     gap: 10px;
     margin-bottom: 20px;
 }
+
